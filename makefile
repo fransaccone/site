@@ -1,7 +1,7 @@
 include config.mk
 
 PAGES = index.html \
-        blog/index.html
+        articles/index.html
 
 PAGE404 = 404.html
 PAGE5XX = 5xx.html
@@ -22,8 +22,8 @@ ICON24   = public/icon24.png
 ICON16   = public/icon16.png
 
 RSSTITLE       = Francesco Saccone
-RSSDESCRIPTION = Francesco Saccone's blog.
-RSSDIR         = blog
+RSSDESCRIPTION = Francesco Saccone's articles.
+RSSDIR         = articles
 
 ICONSVG = public/icon.svg
 
