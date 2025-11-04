@@ -114,7 +114,7 @@ $(RSS):
 	pages=$$(for f in $(PAGES); do echo \
 	                               $$(tail -n +2 "$${f%.html}.md.time") \
 	                               "$$f"; done); \
-	lastbuild=$$(echo $$pages | head -n 1 | cut -d ' ' -f 1); \
+	lastbuild=$$(echo $$pages | sort -n | head -n 1 | cut -d ' ' -f 1); \
 	lastbuild=$$(date -u -d @"$$lastbuild" \
 	             +"%a, %d %b %Y %H:%M:%S +0000"); \
 	printf "<lastBuildDate>$$lastbuild</lastBuildDate>" >> $@; \
