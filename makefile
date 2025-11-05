@@ -1,7 +1,8 @@
 include config.mk
 
 PAGES = index.html \
-        articles/index.html
+        articles/index.html \
+        articles/nixos-the-ultimate-computing-solution/index.html \
 
 PAGE404 = 404.html
 PAGE5XX = 5xx.html
