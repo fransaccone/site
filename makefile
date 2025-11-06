@@ -106,8 +106,7 @@ $(ICON16):
 
 $(RSS):
 	printf '<?xml version="1.0" encoding="UTF-8"?>' > $@
-	printf '<rss version="2.0"' >> $@
-	printf ' xmlns:atom="http://www.w3.org/2005/Atom">' >> $@
+	printf '<rss version="2.0">' >> $@
 	printf '<channel>' >> $@
 
 	printf '<title>$(RSSTITLE)</title>' >> $@
@@ -138,7 +137,7 @@ $(RSS):
 		else \
 			path=$$p; \
 		fi; \
-		printf '<entry>' >> $@; \
+		printf '<item>' >> $@; \
 		printf "<title>$$(cat $${p%.html}.title)</title>" >> $@; \
 		printf "<link>$(BASEURL)/$$path</link>" >> $@; \
 		created=$$(head -n 1 "$${p%.html}.md.time"); \
@@ -151,7 +150,7 @@ $(RSS):
 		printf "<lastBuildDate>$$lastmod</lastBuildDate>" >> $@; \
 		content=$$(tail -n +2 "$${p%.html}.md" | $(LOWDOWN) -t html); \
 		printf "<description>$$content</description>" >> $@; \
-		printf '</entry>' >> $@; \
+		printf '</item>' >> $@; \
 	done
 
 	printf '</channel>' >> $@
