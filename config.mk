@@ -5,3 +5,5 @@ LOWDOWN  = lowdown
 MAGICK   = magick
 
 BASEURL = https://francescosaccone.com
+
+RSSTITLE = Francesco Saccone

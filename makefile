@@ -22,7 +22,6 @@ ICON32   = public/icon32.png
 ICON24   = public/icon24.png
 ICON16   = public/icon16.png
 
-RSSTITLE = Francesco Saccone
 RSSDIR   = articles
 
 ICONSVG = public/icon.svg
