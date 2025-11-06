@@ -32,18 +32,18 @@ FOOTER = footer.html
 .PHONY: all clean install uninstall
 
 all: $(PAGES) $(PAGE404) $(PAGE5XX) $(FAVICON) $(RSS) $(SITEMAP) $(ICON4096) \
-     $(ICON2048) $(ICON1024) $(ICON512) $(ICON128) $(ICON64) $(ICON48) \
-     $(ICON32) $(ICON24) $(ICON16)
+     $(ICON2048) $(ICON1024) $(ICON512) $(ICON256) $(ICON128) $(ICON64) \
+     $(ICON48) $(ICON32) $(ICON24) $(ICON16)
 
 clean:
 	rm -f $(PAGES) $(PAGE404) $(PAGE5XX) $(FAVICON) $(RSS) $(SITEMAP) \
-	$(ICON4096) $(ICON2048) $(ICON1024) $(ICON512) $(ICON128) $(ICON64) \
-	$(ICON48) $(ICON32) $(ICON24) $(ICON16)
+	$(ICON4096) $(ICON2048) $(ICON1024) $(ICON512) $(ICON256) $(ICON128) \
+	$(ICON64) $(ICON48) $(ICON32) $(ICON24) $(ICON16)
 
 install: $(PAGES) $(RSS) $(SITEMAP)
 	for f in $(PAGES) $(FAVICON) $(RSS) $(SITEMAP) $(ICON4096) \
-	         $(ICON2048) $(ICON1024) $(ICON512) $(ICON128) $(ICON64) \
-	         $(ICON48) $(ICON32) $(ICON24) $(ICON16) public \
+	         $(ICON2048) $(ICON1024) $(ICON512) $(ICON256) $(ICON128) \
+	         $(ICON64) $(ICON48) $(ICON32) $(ICON24) $(ICON16) public \
 	         robots.txt; do \
 		mkdir -p $(DESTDIR)$(PREFIX)/$$(dirname $$f); \
 		cp -rf $$f $(DESTDIR)$(PREFIX)/$$(dirname $$f); \
@@ -51,8 +51,8 @@ install: $(PAGES) $(RSS) $(SITEMAP)
 
 uninstall:
 	for f in $(PAGES) $(FAVICON) $(RSS) $(SITEMAP) $(ICON4096) \
-	         $(ICON2048) $(ICON1024) $(ICON512) $(ICON128) $(ICON64) \
-	         $(ICON48) $(ICON32) $(ICON24) $(ICON16) public \
+	         $(ICON2048) $(ICON1024) $(ICON512) $(ICON256) $(ICON128) \
+	         $(ICON64) $(ICON48) $(ICON32) $(ICON24) $(ICON16) public \
 	         robots.txt; do \
 		rm -rf $(DESTDIR)$(PREFIX)/$$f; \
 	done
