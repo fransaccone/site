@@ -110,14 +110,14 @@ to create symbolic links pointing to its build artifacts in the places where a
 POSIX system would normally find them.
 
 The operation that occurs when a package is removed from the system
-configuration and the `nixos-rebuild` command is run, then, simply removes the
-directory containing the package and all the symlinks to it; preventing
-conflicts and avoiding bloat from unused dependencies.
+configuration and the `nixos-rebuild` command is run, then, should simply
+remove the directory containing the package and all the symlinks to it,
+preventing conflicts and avoiding bloat from unused dependencies.
 
-Walking through the configuration, the operating system can clearly identify
-which packages are needed and mark all the rest as removable. It is, in fact,
-possible to *garbage collect*; that is, to delete all the unused packages from
-the system:
+Actually, walking through the configuration, the operating system identifies
+which packages are needed and marks all the removed ones as removable. It is,
+in fact, possible to *garbage collect*; that is, to delete all the unused
+packages from the system:
 
 	$ nix-collect-garbage -d
 
