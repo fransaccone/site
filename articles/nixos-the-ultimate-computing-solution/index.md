@@ -149,7 +149,7 @@ a string.
 
 As a matter of fact, `pkgs.quark` evaluates to the *path* of the build
 directory of the `quark` package, which is, as stated earlier, a subdirectory
-of `/nix/store/`; that means that `"{pkgs.quark}/bin/quark"` is the actual
+of `/nix/store/`; that means that `"${pkgs.quark}/bin/quark"` is the actual
 location of the installed `quark` executable.
 
 It can be seen how no global installation is performed; instead, the package is
