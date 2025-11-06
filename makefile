@@ -59,6 +59,7 @@ uninstall:
 
 $(PAGES) $(PAGE404) $(PAGE5XX):
 	cat $(HEADER) \
+	| sed "s/@TITLE@/$(TITLE) — $$(cat $(@:.html=.title))/g" \
 	| sed "s/@DESCRIPTION@/$$(tr '\n' ' ' < $(@:.html=.desc))/g" \
 	| tr -d '\n\t' | sed -e 's/  \+/ /g' > $@
 
@@ -138,10 +139,7 @@ $(RSS):
 			path=$$p; \
 		fi; \
 		printf '<entry>' >> $@; \
-		printf '<title>' >> $@; \
-		title=$$(head -n 1 "$${p%.html}.md" | sed 's/^# //'); \
-		printf "$$title" >> $@; \
-		printf '</title>' >> $@; \
+		printf "<title>$$(cat $${p%.html}.title)</title>" >> $@; \
 		printf "<link>$(BASEURL)/$$path</link>" >> $@; \
 		created=$$(head -n 1 "$${p%.html}.md.time"); \
 		created=$$(date -u -d @"$$created" \
