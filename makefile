@@ -64,7 +64,7 @@ $(PAGES) $(PAGE404) $(PAGE5XX):
 	| tr -d '\n\t' | sed -e 's/  \+/ /g' > $@
 
 	$(LOWDOWN) -t html $(@:.html=.md) \
-	| sed 's|@BASEURL@|$(BASEURL)|g' >> $@
+	| sed 's|@HOST@|$(HOST)|g' >> $@
 
 	cat $(FOOTER) | tr -d '\n\t' | sed 's/  \+/ /g' >> $@
 
@@ -111,7 +111,7 @@ $(RSS):
 	printf '<channel>' >> $@
 
 	printf '<title>$(RSSTITLE)</title>' >> $@
-	printf '<link>$(BASEURL)/$(RSSDIR)/</link>' >> $@
+	printf '<link>https://$(HOST)/$(RSSDIR)/</link>' >> $@
 	printf '<description>' >> $@
 	tr '\n' ' ' < $(RSSDIR)/index.desc >> $@
 	printf '</description>' >> $@
@@ -140,8 +140,8 @@ $(RSS):
 		fi; \
 		printf '<item>' >> $@; \
 		printf "<title>$$(cat $${p%.html}.title)</title>" >> $@; \
-		printf "<link>$(BASEURL)/$$path</link>" >> $@; \
-		printf "<guid>$(BASEURL)/$$path</guid>" >> $@; \
+		printf "<link>https://$(HOST)/$$path</link>" >> $@; \
+		printf "<guid>https://$(HOST)/$$path</guid>" >> $@; \
 		created=$$(head -n 1 "$${p%.html}.md.time"); \
 		created=$$(date -u -d @"$$created" \
 		           +"%a, %d %b %Y %H:%M:%S +0000"); \
@@ -152,7 +152,7 @@ $(RSS):
 		printf "<lastBuildDate>$$lastmod</lastBuildDate>" >> $@; \
 		content=$$(tail -n +2 "$${p%.html}.md" \
 		           | $(LOWDOWN) -t html \
-		           | sed 's|@BASEURL@|$(BASEURL)|g' \
+		           | sed 's|@HOST@|$(HOST)|g' \
 		           | sed -e 's/&/\&amp;/g' \
 		                 -e 's/</\&lt;/g' \
 		                 -e 's/>/\&gt;/g' \
@@ -178,7 +178,7 @@ $(SITEMAP):
 			path=$$p; \
 		fi; \
 		printf '<url>' >> $@; \
-		printf "<loc>$(BASEURL)/$$path</loc>" >> $@; \
+		printf "<loc>https://$(HOST)/$$path</loc>" >> $@; \
 		lastmod=$$(tail -n +2 "$${p%.html}.md.time"); \
 		lastmod=$$(date -u -d @"$$lastmod" +"%Y-%m-%dT%H:%M:%S%:z"); \
 		printf "<lastmod>$$lastmod</lastmod>" >> $@; \

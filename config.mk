@@ -4,7 +4,7 @@ INKSCAPE = inkscape
 LOWDOWN  = lowdown
 MAGICK   = magick
 
-BASEURL = https://francescosaccone.com
+HOST = francescosaccone.com
 
 TITLE    = Francesco Saccone
 RSSTITLE = Francesco Saccone
