@@ -110,23 +110,4 @@ $(RSS):
 	./utils/genrss $(HOST) "$(RSSTITLE)" $(RSSDIR) $(PAGES) > $@
 
 $(SITEMAP):
-	printf '<?xml version="1.0" encoding="UTF-8"?>' > $@
-	printf '<urlset xmlns="http://www.sitemaps.org/schemas/0.9">' >> $@
-
-	for p in $(PAGES); do \
-		if [ "$$p" = 'index.html' ]; then \
-			path=''; \
-		elif [ "$$(echo $$p | tail -c 12)" = '/index.html' ]; then \
-			path="$$(dirname $$p)/"; \
-		else \
-			path=$$p; \
-		fi; \
-		printf '<url>' >> $@; \
-		printf "<loc>https://$(HOST)/$$path</loc>" >> $@; \
-		lastmod=$$(tail -n +2 "$${p%.html}.md.time"); \
-		lastmod=$$(date -u -d @"$$lastmod" +"%Y-%m-%dT%H:%M:%S%:z"); \
-		printf "<lastmod>$$lastmod</lastmod>" >> $@; \
-		printf '</url>' >> $@; \
-	done
-
-	printf '</urlset>' >> $@
+	./utils/gensitemap $(HOST) $(PAGES) > $@
