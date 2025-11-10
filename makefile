@@ -1,6 +1,7 @@
 include config.mk
 
 PAGES = index.html \
+        git/index.html \
         articles/index.html \
         articles/nixos-the-ultimate-computing-solution/index.html \
 
