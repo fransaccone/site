@@ -141,6 +141,7 @@ $(RSS):
 		printf '<item>' >> $@; \
 		printf "<title>$$(cat $${p%.html}.title)</title>" >> $@; \
 		printf "<link>$(BASEURL)/$$path</link>" >> $@; \
+		printf "<guid>$(BASEURL)/$$path</guid>" >> $@; \
 		created=$$(head -n 1 "$${p%.html}.md.time"); \
 		created=$$(date -u -d @"$$created" \
 		           +"%a, %d %b %Y %H:%M:%S +0000"); \
