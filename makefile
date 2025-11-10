@@ -106,7 +106,8 @@ $(ICON16):
 	$(INKSCAPE) -w 16 -h 16 $(ICONSVG) -o $@
 
 $(RSS):
-	./utils/genrss $(HOST) "$(RSSTITLE)" $(RSSDIR) $(PAGES) > $@
+	LOWDOWN=$(LOWDOWN) ./utils/genrss $(HOST) "$(RSSTITLE)" $(RSSDIR) \
+	                                  $(PAGES) > $@
 
 $(SITEMAP):
 	./utils/gensitemap $(HOST) $(PAGES) > $@
