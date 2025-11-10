@@ -155,13 +155,17 @@ pre code {
 
 table {
 	border-collapse: collapse;
+	table-layout: fixed;
 	width: 100%;
 }
 
 th,
 td {
+	overflow: hidden;
 	padding: 0.5em;
 	text-align: center;
+	text-overflow: ellipsis;
+	word-wrap: break-word;
 }
 
 sup {
