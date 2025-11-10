@@ -63,7 +63,8 @@ $(PAGES) $(PAGE404) $(PAGE5XX):
 	| sed "s/@DESCRIPTION@/$$(tr '\n' ' ' < $(@:.html=.desc))/g" \
 	| tr -d '\n\t' | sed -e 's/  \+/ /g' > $@
 
-	$(LOWDOWN) -t html $(@:.html=.md) >> $@
+	$(LOWDOWN) -t html $(@:.html=.md) \
+	| sed 's|@BASEURL@|$(BASEURL)|g' >> $@
 
 	cat $(FOOTER) | tr -d '\n\t' | sed 's/  \+/ /g' >> $@
 
@@ -150,6 +151,7 @@ $(RSS):
 		printf "<lastBuildDate>$$lastmod</lastBuildDate>" >> $@; \
 		content=$$(tail -n +2 "$${p%.html}.md" \
 		           | $(LOWDOWN) -t html \
+		           | sed 's|@BASEURL@|$(BASEURL)|g' \
 		           | sed -e 's/&/\&amp;/g' \
 		                 -e 's/</\&lt;/g' \
 		                 -e 's/>/\&gt;/g' \
