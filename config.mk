@@ -7,4 +7,4 @@ MAGICK   = magick
 HOST = francescosaccone.com
 
 TITLE    = Francesco Saccone
-RSSTITLE = Francesco Saccone
+RSSTITLE = $(TITLE)
