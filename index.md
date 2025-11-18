@@ -7,6 +7,6 @@ programming. I also enjoy creating music in my spare time.
 ## Contact
 
 You can contact me through email at
-[francesco@frasac.com](mailto:francesco@frasac.com). I sign
-all my outgoing emails with my [OpenPGP key](/public/francesco.pgp). Its
-fingerprint is `4EDA 6889 9B57 C9B6 DD8C 4757 6FB9 949E EE83 AFFC`.
+[fra@frasac.com](mailto:fra@frasac.com). I sign all my outgoing emails with my
+[OpenPGP key](/public/fra.pgp). Its fingerprint is `5696 7E92 681F 8DC9 999E
+FF0F A171 B43A A1EF C359`.
