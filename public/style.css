@@ -12,6 +12,11 @@ html {
 		--fg:    #e4e4e4;
 		--fgdim: #535353;
 	}
+
+	img[src="/public/icon.svg"],
+	img[src="/public/rss.svg"] {
+		filter: invert(1);
+	}
 }
 
 body {
