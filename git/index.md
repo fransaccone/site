@@ -2,8 +2,7 @@
 
 The following is a list of all my [Git](https://git-scm.com/) repositories,
 along with their respective clone URLs. They are mirrored on
-[GitHub](https://github.com/fsaccone) and
-[Codeberg](https://codeberg.org/fsaccone).
+[Codeberg](https://codeberg.org/frasac).
 
 | Repository | Description       | Clone URL
 |------------|-------------------|-----------
