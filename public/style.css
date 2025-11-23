@@ -131,7 +131,8 @@ p img {
 }
 
 hr {
-	border: solid 1px;
+	border: none;
+	border-bottom: solid 1px;
 	color: var(--fgdim);
 	margin: 2em 30%;
 }
