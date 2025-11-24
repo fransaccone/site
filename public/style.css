@@ -30,7 +30,10 @@ body {
 
 header {
 	border-bottom: solid 1px;
+	display: flex;
+	flex-direction: row;
 	font-size: 1.3em;
+	justify-content: space-between;
 }
 
 footer {
@@ -48,17 +51,26 @@ footer {
 	padding: 1em 0;
 }
 
-header nav {
-	align-items: flex-start;
+header > a {
+	flex-grow: 1;
+	text-align: right;
+}
+
+header > a img {
+	height: 100%;
+	max-height: 4em;
+}
+
+header > nav {
 	display: flex;
 	flex-direction: column;
 }
 
-header a {
+header > nav a {
 	text-decoration: none;
 }
 
-header a:hover {
+header > nav a:hover {
 	color: var(--fg);
 	opacity: 1;
 	text-decoration: none;
