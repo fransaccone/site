@@ -13,8 +13,7 @@ html {
 		--fgdim: #535353;
 	}
 
-	img[src="/public/icon.svg"],
-	img[src="/public/rss.svg"] {
+	img[src$=".svg"] {
 		filter: invert(1);
 	}
 }
