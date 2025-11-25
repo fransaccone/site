@@ -3,6 +3,8 @@ html {
 	--bgdim: #e4e4e4;
 	--fg:    #1b1b1b;
 	--fgdim: #acacac;
+
+	--fgdimfilter: brightness(0) invert(1) contrast(0.35);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -11,10 +13,8 @@ html {
 		--bgdim: #1b1b1b;
 		--fg:    #e4e4e4;
 		--fgdim: #535353;
-	}
 
-	img[src$=".svg"] {
-		filter: invert(1);
+		--fgdimfilter: brightness(0) contrast(0.35);
 	}
 }
 
@@ -139,6 +139,10 @@ p img {
 	border-radius: 0;
 	max-height: 0.7em;
 	max-width: 0.7em;
+}
+
+img[src$=".svg"] {
+	filter: var(--fgdimfilter);
 }
 
 hr {
