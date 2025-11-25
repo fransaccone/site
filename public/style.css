@@ -4,6 +4,7 @@ html {
 	--fg:    #1b1b1b;
 	--fgdim: #acacac;
 
+	--fgfilter:    brightness(0) invert(0) contrast(0.79);
 	--fgdimfilter: brightness(0) invert(1) contrast(0.35);
 }
 
@@ -14,7 +15,8 @@ html {
 		--fg:    #e4e4e4;
 		--fgdim: #535353;
 
-		--fgdimfilter: brightness(0) contrast(0.35);
+		--fgfilter:    brightness(0) invert(1) contrast(0.79);
+		--fgdimfilter: brightness(0) invert(0) contrast(0.35);
 	}
 }
 
@@ -57,6 +59,7 @@ header > a {
 }
 
 header > a img {
+	filter: var(--fgdimfilter);
 	height: 100%;
 	max-height: 4em;
 }
@@ -141,8 +144,8 @@ p img {
 	max-width: 0.7em;
 }
 
-img[src$=".svg"] {
-	filter: var(--fgdimfilter);
+img[src$=".svg"]:not(header img) {
+	filter: var(--fgfilter);
 }
 
 hr {
