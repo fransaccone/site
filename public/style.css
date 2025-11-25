@@ -208,15 +208,6 @@ table {
 	width: 100%;
 }
 
-code:not(pre code) {
-	color: var(--fgdim);
-	transition: color var(--transitiontime);
-}
-
-code:not(pre code):hover {
-	color: var(--fg);
-}
-
 pre {
 	color: var(--fgdim);
 	overflow: auto;
