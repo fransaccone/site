@@ -196,10 +196,25 @@ table {
 	width: 100%;
 }
 
+code:not(pre code) {
+	color: var(--fgdim);
+	transition: color var(--transitiontime);
+}
+
+code:not(pre code):hover {
+	color: var(--fg);
+}
+
 pre {
+	color: var(--fgdim);
 	overflow: auto;
 	padding: 1em;
+	transition: color var(--transitiontime);
 	white-space: pre;
+}
+
+pre:hover {
+	color: var(--fg);
 }
 
 pre code {
