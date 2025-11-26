@@ -23,6 +23,17 @@ ICON48         = public/icon48.png
 ICON32         = public/icon32.png
 ICON24         = public/icon24.png
 ICON16         = public/icon16.png
+ICONBG4096     = public/iconbg4096.png
+ICONBG2048     = public/iconbg2048.png
+ICONBG1024     = public/iconbg1024.png
+ICONBG512      = public/iconbg512.png
+ICONBG256      = public/iconbg256.png
+ICONBG128      = public/iconbg128.png
+ICONBG64       = public/iconbg64.png
+ICONBG48       = public/iconbg48.png
+ICONBG32       = public/iconbg32.png
+ICONBG24       = public/iconbg24.png
+ICONBG16       = public/iconbg16.png
 ICONCIRCLE4096 = public/iconcircle4096.png
 ICONCIRCLE2048 = public/iconcircle2048.png
 ICONCIRCLE1024 = public/iconcircle1024.png
@@ -37,6 +48,9 @@ ICONCIRCLE16   = public/iconcircle16.png
 
 ICONS = $(ICON4096) $(ICON2048) $(ICON1024) $(ICON512) $(ICON256) $(ICON128) \
         $(ICON64) $(ICON48) $(ICON32) $(ICON24) $(ICON16)
+ICONBGS = $(ICONBG4096) $(ICONBG2048) $(ICONBG1024) $(ICONBG512) $(ICONBG256) \
+          $(ICONBG128) $(ICONBG64) $(ICONBG48) $(ICONBG32) $(ICONBG24) \
+          $(ICONBG16)
 ICONCIRCLES = $(ICONCIRCLE4096) $(ICONCIRCLE2048) $(ICONCIRCLE1024) \
               $(ICONCIRCLE512) $(ICONCIRCLE256) $(ICONCIRCLE128) \
               $(ICONCIRCLE64) $(ICONCIRCLE48) $(ICONCIRCLE32) $(ICONCIRCLE24) \
@@ -45,6 +59,7 @@ ICONCIRCLES = $(ICONCIRCLE4096) $(ICONCIRCLE2048) $(ICONCIRCLE1024) \
 RSSDIR   = articles
 
 ICONSVG       = public/icon.svg
+ICONBGSVG     = public/iconbg.svg
 ICONCIRCLESVG = public/iconcircle.svg
 
 HEADER = header.html
@@ -53,22 +68,22 @@ FOOTER = footer.html
 .PHONY: all clean install uninstall
 
 all: $(PAGES) $(PAGE404) $(PAGE5XX) $(FAVICON) $(RSS) $(SITEMAP) $(ICONS) \
-     $(ICONCIRCLES)
+     $(ICONBGS) $(ICONCIRCLES)
 
 clean:
 	rm -f $(PAGES) $(PAGE404) $(PAGE5XX) $(FAVICON) $(RSS) $(SITEMAP) \
-	      $(ICONS) $(ICONCIRCLES)
+	      $(ICONS) $(ICONBGS) $(ICONCIRCLES)
 
 install: $(PAGES) $(RSS) $(SITEMAP)
 	for f in $(PAGES) $(FAVICON) $(RSS) $(SITEMAP) $(ICONS) \
-	         $(ICONCIRCLES) public robots.txt; do \
+	         $(ICONBGS) $(ICONCIRCLES) public robots.txt; do \
 		mkdir -p $(DESTDIR)$(PREFIX)/$$(dirname $$f); \
 		cp -rf $$f $(DESTDIR)$(PREFIX)/$$(dirname $$f); \
 	done
 
 uninstall:
 	for f in $(PAGES) $(FAVICON) $(RSS) $(SITEMAP) $(ICONS) \
-	         $(ICONCIRCLES) public robots.txt; do \
+	         $(ICONBGS) $(ICONCIRCLES) public robots.txt; do \
 		rm -rf $(DESTDIR)$(PREFIX)/$$f; \
 	done
 
@@ -121,6 +136,39 @@ $(ICON24):
 
 $(ICON16):
 	$(INKSCAPE) -w 16 -h 16 $(ICONSVG) -o $@
+
+$(ICONBG4096):
+	$(INKSCAPE) -w 4096 -h 4096 $(ICONBGSVG) -o $@
+
+$(ICONBG2048):
+	$(INKSCAPE) -w 2048 -h 2048 $(ICONBGSVG) -o $@
+
+$(ICONBG1024):
+	$(INKSCAPE) -w 1024 -h 1024 $(ICONBGSVG) -o $@
+
+$(ICONBG512):
+	$(INKSCAPE) -w 512 -h 512 $(ICONBGSVG) -o $@
+
+$(ICONBG256):
+	$(INKSCAPE) -w 256 -h 256 $(ICONBGSVG) -o $@
+
+$(ICONBG128):
+	$(INKSCAPE) -w 128 -h 128 $(ICONBGSVG) -o $@
+
+$(ICONBG64):
+	$(INKSCAPE) -w 64 -h 64 $(ICONBGSVG) -o $@
+
+$(ICONBG48):
+	$(INKSCAPE) -w 48 -h 48 $(ICONBGSVG) -o $@
+
+$(ICONBG32):
+	$(INKSCAPE) -w 32 -h 32 $(ICONBGSVG) -o $@
+
+$(ICONBG24):
+	$(INKSCAPE) -w 24 -h 24 $(ICONBGSVG) -o $@
+
+$(ICONBG16):
+	$(INKSCAPE) -w 16 -h 16 $(ICONBGSVG) -o $@
 
 $(ICONCIRCLE4096):
 	$(INKSCAPE) -w 4096 -h 4096 $(ICONCIRCLESVG) -o $@
