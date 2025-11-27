@@ -9,8 +9,10 @@ PAGE404 = 404.html
 PAGE5XX = 5xx.html
 
 FAVICON  = favicon.ico
-RSS      = $(RSSDIR)/rss.xml
 SITEMAP  = sitemap.xml
+
+RSSDIR = articles
+RSS    = $(RSSDIR)/rss.xml
 
 ICON4096       = public/icon4096.png
 ICON2048       = public/icon2048.png
@@ -55,8 +57,6 @@ ICONCIRCLES = $(ICONCIRCLE4096) $(ICONCIRCLE2048) $(ICONCIRCLE1024) \
               $(ICONCIRCLE512) $(ICONCIRCLE256) $(ICONCIRCLE128) \
               $(ICONCIRCLE64) $(ICONCIRCLE48) $(ICONCIRCLE32) $(ICONCIRCLE24) \
               $(ICONCIRCLE16)
-
-RSSDIR   = articles
 
 ICONSVG       = public/icon.svg
 ICONBGSVG     = public/iconbg.svg
