@@ -213,11 +213,6 @@ table {
 	padding: 0.2em;
 }
 
-pre,
-table {
-	width: 100%;
-}
-
 pre {
 	color: var(--fgdim);
 	overflow: auto;
@@ -237,6 +232,7 @@ pre code {
 table {
 	border-collapse: collapse;
 	table-layout: fixed;
+	width: 100%;
 }
 
 th,
