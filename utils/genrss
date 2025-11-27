@@ -75,8 +75,7 @@ for p in $pages; do
 
 	# Set content to the translated HTML content of the page, excluding the
 	# first line; it should be the page source without the title header.
-	content=$(tail -n +2 ${p%.html}.md \
-	          | ./utils/genhtml "$host" "$rssdir" "$email")
+	content=$(./utils/genhtml "$host" "$rssdir" "$email" "${p%.html}.md")
 
 	# Replace @HOST@ with host in content.
 	content=$(echo $content | sed 's|@HOST@|$host|g')
@@ -97,7 +96,7 @@ for p in $pages; do
 	printf "<guid>https://$host/$path</guid>"
 	printf "<pubDate>$creation</pubDate>"
 	printf "<lastBuildDate>$lastmod</lastBuildDate>"
-	printf "<description>$xmlcontent</description>"
+	printf '%s' "<description>$xmlcontent</description>"
 
 	printf '</item>'
 done

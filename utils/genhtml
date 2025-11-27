@@ -1,16 +1,16 @@
 #!/bin/sh -eu
 
 if [ $# -lt 3 ]; then
-	echo "$0 host rssdir email [md]" >&2
+	echo "$0 host rssdir email md" >&2
 	exit 1
 fi
 
 host="$1"
 rssdir="$2"
 email="$3"
-md="${4:-}"
+md="$4"
 
-${LOWDOWN:-lowdown} -t html "${md:--}" | sed "s|@HOST@|$host|g"
+${LOWDOWN:-lowdown} -t html "$md" | sed "s|@HOST@|$host|g"
 
 if [ "${md#$rssdir/}" != "$md" ]; then
 	echo -n '<hr/>'
