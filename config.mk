@@ -6,5 +6,7 @@ MAGICK   = magick
 
 HOST = frasac.com
 
+EMAIL = contact@frasac.com
+
 TITLE    = Frasac
 RSSTITLE = $(TITLE)

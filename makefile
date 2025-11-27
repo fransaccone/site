@@ -96,7 +96,8 @@ $(PAGES) $(PAGE404) $(PAGE5XX):
 	| sed "s/@DESCRIPTION@/$$(tr '\n' ' ' < $(@:.html=.desc))/g" \
 	| tr -d '\n\t' | sed -e 's/  \+/ /g' > $@
 
-	LOWDOWN=$(LOWDOWN) ./utils/genhtml $(HOST) $(@:.html=.md) >> $@
+	LOWDOWN=$(LOWDOWN) ./utils/genhtml $(HOST) $(RSSDIR) $(EMAIL) \
+	                                   $(@:.html=.md) >> $@
 
 	cat $(FOOTER) | tr -d '\n\t' | sed 's/  \+/ /g' >> $@
 
