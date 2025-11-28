@@ -26,11 +26,11 @@ else
 	fulltitle="$sitetitle"
 fi
 
-cat header.html | sed "s/@DESCRIPTION@/$description/g" \
-                | sed "s/@TITLE@/$fulltitle/g" \
-                | tr -d '\n\t' \
-                | sed -e 's/  \+/ /g' \
+cat src/header.html | sed "s/@DESCRIPTION@/$description/g" \
+                    | sed "s/@TITLE@/$fulltitle/g" \
+                    | tr -d '\n\t' \
+                    | sed -e 's/  \+/ /g' \
 
 ./scripts/gethtml "$host" "$md" "$discussemail"
 
-cat footer.html | tr -d '\n\t' | sed -e 's/  \+/ /g'
+cat src/footer.html | tr -d '\n\t' | sed -e 's/  \+/ /g'

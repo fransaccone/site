@@ -3,25 +3,23 @@
 # Time format specified by RSS 2.0.
 timefmt='%a, %d %b %Y %H:%M:%S +0000'
 
-if [ $# -lt 4 ]; then
-	echo "$0 host discussemail title directory [page ...]" >&2
+if [ $# -lt 5 ]; then
+	echo "$0 host discussemail title reldir desc [page ...]" >&2
 	exit 1
 fi
 
 host="$1"
 discussemail="$2"
 title="$3"
-dir="$4"
+reldir="$4"
+desc="$5"
 
-shift 4
+shift 5
 
-# Set pages to a newline-separated list of lines of format "modification file",
-# where file is in dir.
+# Set pages to a newline-separated list of lines of format "modification file".
 pages=""
 for p in $@; do
-	if [ "${p#$dir/}" != "$p" ]; then
-		pages=$(printf "$pages\n$(tail -n +2 ${p%.html}.md.time) $p")
-	fi
+	pages=$(printf "$pages\n$(tail -n +2 $p.time) $p")
 done
 
 # Sort pages to have the most recent one on top.
@@ -43,20 +41,15 @@ printf '<rss version="2.0">'
 printf '<channel>'
 
 printf "<title>$title</title>"
-printf "<link>https://$host/$dir/</link>"
-printf "<description>$(tr '\n' ' ' < $dir/index.desc)</description>"
+printf "<link>https://$host/$reldir/</link>"
+printf "<description>$desc</description>"
 printf '<language>en-us</language>'
 printf "<lastBuildDate>$lastbuild</lastBuildDate>"
 
 for p in $pages; do
-	# Ignore index page.
-	if [ "$p" = "$dir/index.html" ]; then
-		continue
-	fi
-
-	# Only have the path contain a trailing "/*.html" for pages which are
+	# Only have the path contain a trailing "/*.md" for pages which are
 	# not index files; if they are, just use the directory as the path.
-	if [ "$(echo $p | tail -c 12)" = '/index.html' ]; then
+	if [ "$(echo $p | tail -c 12)" = '/index.md' ]; then
 		path="$(dirname $p)/"
 	else
 		path="$p"
@@ -64,17 +57,17 @@ for p in $pages; do
 
 	# Retrieve creation timestamp creationts and set creation to the
 	# formatted time.
-	creationts=$(head -n 1 "${p%.html}.md.time")
+	creationts=$(head -n 1 "$p.time")
 	creation=$(date -u -d @"$creationts" +"$timefmt")
 
 	# Retrieve last modification timestamp lastmodts and set lastmod to the
 	# formatted time.
-	lastmodts=$(tail -n +2 "${p%.html}.md.time")
+	lastmodts=$(tail -n +2 "$p.time")
 	lastmod=$(date -u -d @"$lastmodts" +"$timefmt")
 
 	# Set content to the translated HTML content of the page, excluding the
 	# first line; it should be the page source without the title header.
-	content=$(./scripts/gethtml "$host" "${p%.html}.md" "$discussemail")
+	content=$(./scripts/gethtml "$host" "$p" "$discussemail")
 
 	# Replace @HOST@ with host in content.
 	content=$(echo $content | sed 's|@HOST@|$host|g')
@@ -90,7 +83,7 @@ for p in $pages; do
 
 	printf '<item>'
 
-	printf "<title>$(cat ${p%.html}.title)</title>"
+	printf "<title>$(cat ${p%.md}.title)</title>"
 	printf "<link>https://$host/$path</link>"
 	printf "<guid>https://$host/$path</guid>"
 	printf "<pubDate>$creation</pubDate>"
