@@ -35,7 +35,8 @@ for mdpath in $(cd "$root" && find . -type f -name '*.md'); do
 
 	printf "Generating $html."
 
-	./scripts/getpage "$sitetitle" "$host" "$md" "$email" > "$html"
+	./scripts/getpage "$sitetitle" "$host" "$md" "$src/header.html" \
+	                  "$src/footer.html" "$email" > "$html"
 
 	printf "\r\033[KGenerated $html.\n"
 done

@@ -1,14 +1,16 @@
 #!/bin/sh -eu
 
-if [ $# -lt 3 ]; then
-	echo "$0 sitetitle host md [discussemail]" >&2
+if [ $# -lt 5 ]; then
+	echo "$0 sitetitle host md header footer [discussemail]" >&2
 	exit 1
 fi
 
 sitetitle="$1"
 host="$2"
 md="$3"
-discussemail="${4:-}"
+header="$4"
+footer="$5"
+discussemail="${6:-}"
 
 desc="${md%.md}.desc"
 title="${md%.md}.title"
@@ -26,11 +28,11 @@ else
 	fulltitle="$sitetitle"
 fi
 
-cat src/header.html | sed "s/@DESCRIPTION@/$description/g" \
-                    | sed "s/@TITLE@/$fulltitle/g" \
-                    | tr -d '\n\t' \
-                    | sed -e 's/  \+/ /g' \
+cat "$header" | sed "s/@DESCRIPTION@/$description/g" \
+              | sed "s/@TITLE@/$fulltitle/g" \
+              | tr -d '\n\t' \
+              | sed -e 's/  \+/ /g'
 
 ./scripts/gethtml "$host" "$md" "$discussemail"
 
-cat src/footer.html | tr -d '\n\t' | sed -e 's/  \+/ /g'
+cat "$footer" | tr -d '\n\t' | sed -e 's/  \+/ /g'
