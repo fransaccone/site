@@ -49,7 +49,7 @@ printf "<lastBuildDate>$lastbuild</lastBuildDate>"
 for p in $pages; do
 	# Only have the path contain a trailing "/*.md" for pages which are
 	# not index files; if they are, just use the directory as the path.
-	if [ "$(echo $p | tail -c 12)" = '/index.md' ]; then
+	if [ "$(echo $p | tail -c 10)" = '/index.md' ]; then
 		path="$(dirname $p)/"
 	else
 		path="$p"
