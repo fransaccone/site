@@ -1,0 +1,38 @@
+#!/bin/sh -eu
+
+if [ $# -lt 3 ]; then
+	echo "$0 sitetitle host email md" >&2
+	exit 1
+fi
+
+sitetitle="$1"
+host="$2"
+email="$3"
+md="$4"
+
+desc="${md%.md}.desc"
+title="${md%.md}.title"
+
+for f in "$desc" "$title"; do
+	if [ ! -r "$f" ]; then
+		echo "File $f does not exist or is not readable." >&2
+		exit 1
+	fi
+done
+
+description="$(cat $desc | tr '\n' ' ')"
+
+if [ -n "$title" ]; then
+	fulltitle="$sitetitle — $(cat $title)"
+else
+	fulltitle="$sitetitle"
+fi
+
+cat header.html | sed "s/@DESCRIPTION@/$description/g" \
+                | sed "s/@TITLE@/$fulltitle/g" \
+                | tr -d '\n\t' \
+                | sed -e 's/  \+/ /g' \
+
+./scripts/genhtml "$host" "$email" "$md"
+
+cat footer.html | tr -d '\n\t' | sed -e 's/  \+/ /g'
