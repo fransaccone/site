@@ -1,7 +1,10 @@
 #!/bin/sh -eu
 
+highsizes="4096 2048 1024 512"
+lowsizes="256 128 64 48 32 24 16"
+
 for i in '' 'bg' 'circle'; do
-	for n in 16 24 32 48 64 128 256 512 1024 2048 4096; do
+	for n in $highsizes $lowsizes; do
 		printf "Exporting icon$i$n.png."
 
 		${INKSCAPE:-inkscape} -w $n -h $n "public/icon$i.svg" \
@@ -10,3 +13,11 @@ for i in '' 'bg' 'circle'; do
 		printf "\r\033[KExported icon$i$n.png.\n"
 	done
 done
+
+printf "Exporting favicon.ico."
+
+icons=$(for n in $lowsizes; do echo "public/icon$n.png"; done)
+
+${MAGICK:-magick} $icons favicon.ico
+
+printf "\r\033[KExported favicon.ico.\n"
