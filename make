@@ -1,8 +1,9 @@
 #!/bin/sh -eu
 
-src=${SRC:-'src'}
-root=${ROOT:-"$src/root"}
 build=${BUILD:-'build'}
+
+src='src'
+root="$src/root"
 
 if [ $# -ne 3 ]; then
 	echo "$0 host sitetitle discussemail" >&2
