@@ -13,16 +13,14 @@ md="$4"
 desc="${md%.md}.desc"
 title="${md%.md}.title"
 
-for f in "$desc" "$title"; do
-	if [ ! -r "$f" ]; then
-		echo "File $f does not exist or is not readable." >&2
-		exit 1
-	fi
-done
+if [ ! -r "$desc" ]; then
+	echo "File $desc does not exist or is not readable." >&2
+	exit 1
+fi
 
 description="$(cat $desc | tr '\n' ' ')"
 
-if [ -n "$title" ]; then
+if [ -r "$title" ]; then
 	fulltitle="$sitetitle — $(cat $title)"
 else
 	fulltitle="$sitetitle"
