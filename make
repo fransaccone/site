@@ -42,7 +42,7 @@ if [ ! -e 'build/articles/rss.xml' ]; then
 	                               ! -path 'src/root/articles/index.md')
 
 	./scripts/getrss "$host" "$discussemail" "$sitetitle" 'articles' \
-	                 "$desc" $pages > 'build/articles/rss.xml'
+	                 > 'build/articles/rss.xml'
 fi
 
 if [ ! -e 'build/robots.txt' ]; then
