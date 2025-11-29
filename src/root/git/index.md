@@ -2,7 +2,7 @@
 
 The following is a list of all my [Git](https://git-scm.com/) repositories,
 along with their respective clone URLs. They are mirrored on
-[Codeberg](https://codeberg.org/frasac).
+[GitHub](https://github.com/frasaccone).
 
 | Repository | Description       | Clone URL
 |------------|-------------------|-----------
