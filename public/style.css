@@ -69,7 +69,6 @@ header > div {
 
 header > div img {
 	filter: var(--fgdimfilter);
-	height: 100%;
 	height: 3em;
 	transition: filter var(--transitiontime);
 }
