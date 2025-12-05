@@ -66,6 +66,74 @@
 	font-weight: 700;
 }
 
+/* Office Code Pro (normal) */
+
+@font-face {
+	src: url("/public/fonts/office-code-pro/regular.otf");
+	font-family: "Office Code Pro";
+
+	font-style: normal;
+	font-weight: 400;
+}
+
+@font-face {
+	src: url("/public/fonts/office-code-pro/medium.otf");
+	font-family: "Office Code Pro";
+
+	font-style: normal;
+	font-weight: 500;
+}
+
+@font-face {
+	src: url("/public/fonts/office-code-pro/semibold.otf");
+	font-family: "Office Code Pro";
+
+	font-style: normal;
+	font-weight: 600;
+}
+
+@font-face {
+	src: url("/public/fonts/office-code-pro/bold.otf");
+	font-family: "Office Code Pro";
+
+	font-style: normal;
+	font-weight: 700;
+}
+
+/* Office Code Pro (italic) */
+
+@font-face {
+	src: url("/public/fonts/office-code-pro/italic.otf");
+	font-family: "Office Code Pro";
+
+	font-style: italic;
+	font-weight: 400;
+}
+
+@font-face {
+	src: url("/public/fonts/office-code-pro/mediumitalic.otf");
+	font-family: "Office Code Pro";
+
+	font-style: italic;
+	font-weight: 500;
+}
+
+@font-face {
+	src: url("/public/fonts/office-code-pro/semibolditalic.otf");
+	font-family: "Office Code Pro";
+
+	font-style: italic;
+	font-weight: 600;
+}
+
+@font-face {
+	src: url("/public/fonts/office-code-pro/bolditalic.otf");
+	font-family: "Office Code Pro";
+
+	font-style: italic;
+	font-weight: 700;
+}
+
 /* Poppins (normal) */
 
 @font-face {

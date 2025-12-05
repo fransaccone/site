@@ -1,6 +1,7 @@
 html {
 	--transitiontime: 0.2s cubic-bezier(0.5, 0, 0.5, 1);
 
+	--monospace: "Office Code Pro", monospace;
 	--sans-serif: "Work Sans", sans-serif;
 	--serif: "Libre Baskerville", serif;
 
@@ -311,6 +312,11 @@ table {
 	background-color: var(--bgdim);
 	border-radius: 0.3em;
 	padding: 0.2em;
+}
+
+code,
+pre {
+	font-family: var(--monospace);
 }
 
 pre {
