@@ -2,7 +2,7 @@ html {
 	--transitiontime: 0.2s cubic-bezier(0.5, 0, 0.5, 1);
 
 	--singularfont: "Poppins", serif;
-	--singularsize: 1.8em;
+	--singularsize: 1.8rem;
 	--singularweight: 500;
 
 	--bg:    #eeeeee;
