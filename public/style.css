@@ -1,7 +1,7 @@
 html {
 	--transitiontime: 0.2s cubic-bezier(0.5, 0, 0.5, 1);
 
-	--titlefont: "Poppins", serif;
+	--singularfont: "Poppins", serif;
 
 	--bg:    #eeeeee;
 	--bgdim: #e4e4e4;
@@ -45,7 +45,7 @@ header {
 	border-bottom: solid 1px;
 	display: flex;
 	flex-direction: row;
-	font-family: var(--titlefont);
+	font-family: var(--singularfont);
 	font-size: 1.5em;
 	justify-content: space-between;
 }
@@ -137,7 +137,7 @@ a[rev="footnote"]:hover {
 
 #discuss a {
 	color: var(--fgdim);
-	font-family: var(--titlefont);
+	font-family: var(--singularfont);
 	font-size: 1.5em;
 	text-decoration: none;
 }
