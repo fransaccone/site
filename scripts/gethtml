@@ -9,6 +9,17 @@ host="$1"
 md="$2"
 discussemail="${3:-}"
 
+if [ -n "$discussemail" ]; then
+	pubdatets=$(head -n 1 "$md.time")
+	pubdate=$(date -u -d @"$pubdatets" +"%Y-%m-%d")
+
+	echo -n '<div id="publication-date">'
+	echo -n '<span>'
+	echo -n "Published on $pubdate"
+	echo -n '</span>'
+	echo -n '</div>'
+fi
+
 ${LOWDOWN:-lowdown} -t html "$md" | sed "s|@HOST@|$host|g"
 
 if [ -n "$discussemail" ]; then

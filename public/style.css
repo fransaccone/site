@@ -131,11 +131,19 @@ a[rev="footnote"]:hover {
 	color: inherit;
 }
 
+#publication-date,
 #discuss {
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-end;
 	width: 100%;
+}
+
+#publication-date span {
+	color: var(--fgdim);
+	font-family: var(--singularfont);
+	font-size: calc(0.8 * var(--singularsize));
+	font-weight: var(--singularweight);
 }
 
 #discuss a {
