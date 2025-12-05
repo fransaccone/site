@@ -58,7 +58,6 @@ header {
 footer {
 	border-top: solid 1px;
 	font-family: var(--serif);
-	font-size: 0.9em;
 	text-align: center;
 	width: 100%;
 }
