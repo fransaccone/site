@@ -82,6 +82,13 @@ for f in public/*; do
 	fi
 done
 
+for css in fonts.css style.css; do
+	if [ ! -e "$build/public/$css" ]; then
+		./scripts/minimize < "src/$css" > "$build/public/$css"
+		echo "Generated $build/public/$css."
+	fi
+done
+
 for svg in "$src"/icon/*.svg; do
 	./scripts/genicons "$svg" "$build/public"
 
