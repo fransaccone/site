@@ -23,7 +23,6 @@ fi
 ${LOWDOWN:-lowdown} -t html "$md" | sed "s|@HOST@|$host|g"
 
 if [ -n "$discussemail" ]; then
-	echo -n '<hr/>'
 	echo -n '<div id="discuss">'
 	echo -n '<a href="mailto:'
 	echo -n "$discussemail?subject=[Discuss]%20"
