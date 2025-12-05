@@ -157,6 +157,21 @@ h6 {
 	text-align: center;
 }
 
+h1 {
+	font-size: 2em;
+}
+
+h2 {
+	font-size: 1.5em;
+}
+
+h3,
+h4,
+h5,
+h6 {
+	font-size: 1.2em;
+}
+
 p,
 ul,
 ol {
