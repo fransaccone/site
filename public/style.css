@@ -126,13 +126,17 @@ a[rev="footnote"]:hover {
 }
 
 #discuss {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	width: 100%;
+}
+
+#discuss a {
 	color: var(--fgdim);
-	display: inline-block;
 	font-family: serif;
 	font-size: 1.5em;
-	text-align: right;
 	text-decoration: none;
-	width: 100%;
 }
 
 h1,

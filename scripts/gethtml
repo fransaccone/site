@@ -13,8 +13,10 @@ ${LOWDOWN:-lowdown} -t html "$md" | sed "s|@HOST@|$host|g"
 
 if [ -n "$discussemail" ]; then
 	echo -n '<hr/>'
-	echo -n '<a id="discuss" href="mailto:'
+	echo -n '<div id="discuss">'
+	echo -n '<a href="mailto:'
 	echo -n "$discussemail?subject=[Discuss]%20"
 	echo -n "$(sed 's/ /%20/g' ${md%.md}.title)"
 	echo -n '">Discuss</a>'
+	echo -n '</div>'
 fi
