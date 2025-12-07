@@ -5,9 +5,9 @@ html {
 	--sans-serif: "Work Sans", sans-serif;
 	--serif: "Libre Baskerville", serif;
 
-	--singularfont: "Poppins", var(--serif);
-	--singularsize: 1.8rem;
-	--singularweight: 500;
+	--titlefont: "Poppins", var(--serif);
+	--titlesize: 1.8rem;
+	--titleweight: 500;
 
 	--bg:    #eeeeee;
 	--bgdim: #e4e4e4;
@@ -51,9 +51,9 @@ header {
 	border-bottom: solid 1px;
 	display: flex;
 	flex-direction: row;
-	font-family: var(--singularfont);
-	font-size: var(--singularsize);
-	font-weight: var(--singularweight);
+	font-family: var(--titlefont);
+	font-size: var(--titlesize);
+	font-weight: var(--titleweight);
 	justify-content: space-between;
 }
 
@@ -144,16 +144,16 @@ a[rev="footnote"]:hover {
 
 #publication-date span {
 	color: var(--fgdim);
-	font-family: var(--singularfont);
-	font-size: calc(0.8 * var(--singularsize));
-	font-weight: var(--singularweight);
+	font-family: var(--titlefont);
+	font-size: calc(0.8 * var(--titlesize));
+	font-weight: var(--titleweight);
 }
 
 #discuss a {
 	color: var(--fgdim);
-	font-family: var(--singularfont);
-	font-size: var(--singularsize);
-	font-weight: var(--singularweight);
+	font-family: var(--titlefont);
+	font-size: var(--titlesize);
+	font-weight: var(--titleweight);
 	text-decoration: none;
 }
 
@@ -163,8 +163,8 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: var(--singularfont);
-	font-weight: var(--singularweight);
+	font-family: var(--titlefont);
+	font-weight: var(--titleweight);
 	position: relative;
 	text-align: center;
 }
