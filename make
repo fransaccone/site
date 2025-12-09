@@ -99,12 +99,8 @@ for svg in "$src"/icon/*.svg; do
 done
 
 if [ ! -e "$build/favicon.ico" ]; then
-	./scripts/genfavicon "$build/favicon.ico" "$build/public/icon256.png" \
-	                                          "$build/public/icon128.png" \
-	                                          "$build/public/icon64.png" \
-	                                          "$build/public/icon48.png" \
+	./scripts/genfavicon "$build/favicon.ico" "$build/public/icon48.png" \
 	                                          "$build/public/icon32.png" \
-	                                          "$build/public/icon24.png" \
 	                                          "$build/public/icon16.png"
 
 	echo "Generated $build/favicon.ico."
