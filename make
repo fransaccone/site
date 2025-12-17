@@ -82,10 +82,10 @@ for f in public/*; do
 	fi
 done
 
-for css in fonts.css style.css; do
-	if [ ! -e "$build/public/$css" ]; then
-		./scripts/minimize < "src/$css" > "$build/public/$css"
-		echo "Generated $build/public/$css."
+for f in fonts.css style.css script.js; do
+	if [ ! -e "$build/public/$f" ]; then
+		./scripts/minimize < "src/$f" > "$build/public/$f"
+		echo "Generated $build/public/$f."
 	fi
 done
 
