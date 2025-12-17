@@ -134,22 +134,22 @@ a[rev="footnote"]:hover {
 	color: inherit;
 }
 
-#publication-date,
-#discuss {
+div#publication-date,
+div#discuss {
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-end;
 	width: 100%;
 }
 
-#publication-date span {
+div#publication-date span {
 	color: var(--fgdim);
 	font-family: var(--titlefont);
 	font-size: calc(0.8 * var(--titlesize));
 	font-weight: var(--titleweight);
 }
 
-#discuss a {
+div#discuss a {
 	color: var(--fgdim);
 	font-family: var(--titlefont);
 	font-size: var(--titlesize);
