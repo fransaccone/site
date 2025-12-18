@@ -13,6 +13,15 @@ style.textContent = `
 	${titleSelector}:hover {
 		cursor: pointer;
 	}
+
+	${titleSelector} > img {
+		filter: var(--fgdimfilter);
+		transition: filter var(--transitiontime);
+	}
+
+	${titleSelector}:hover > img {
+		filter: var(--fgfilter);
+	}
 `;
 document.head.appendChild(style);
 
