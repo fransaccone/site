@@ -108,13 +108,13 @@ header > nav > ul a:hover {
 	color: var(--fg);
 }
 
-a:not(header a) {
+a:not(header a):not(div#discuss a) {
 	color: inherit;
 	text-decoration: underline;
 	transition: opacity var(--transitiontime);
 }
 
-a:not(header a):hover {
+a:not(header a):not(div#discuss a):hover {
 	opacity: 0.7;
 }
 
@@ -149,6 +149,11 @@ div#discuss a {
 	font-size: calc(0.8 * var(--titlesize));
 	font-weight: var(--titleweight);
 	text-decoration: none;
+	transition: color var(--transitiontime);
+}
+
+div#discuss a:hover {
+	color: var(--fg);
 }
 
 h1,
