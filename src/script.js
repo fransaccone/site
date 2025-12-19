@@ -1,8 +1,10 @@
-const titleSelector = "h1#francesco-saccone";
+const titleSelector = "h1#pronunciation-francesco-saccone";
 const title = document.querySelector(titleSelector);
 const speaker = document.createElement("img");
 const style = document.createElement("style");
 const audio = new Audio("/public/francescosaccone.wav");
+
+title.firstChild.remove();
 
 speaker.src = "/public/speaker.svg";
 speaker.alt = "Audio";
