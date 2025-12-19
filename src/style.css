@@ -154,11 +154,12 @@ p > img:only-child {
 	border: solid 1px;
 	border-color: var(--fgdim);
 	border-radius: 0.3em;
+	filter: grayscale(1);
 	height: auto;
 	margin-left: 50%;
 	padding: 1em;
 	transform: translateX(-50%);
-	transition: border-color var(--transitiontime);
+	transition: all var(--transitiontime);
 	width: 50%;
 }
 
@@ -172,6 +173,7 @@ p > img:only-child {
 
 p > img:only-child:hover {
 	border-color: var(--fg);
+	filter: grayscale(0);
 }
 
 img[src$=".svg"] {
