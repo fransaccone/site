@@ -163,7 +163,7 @@ p img {
 	max-width: 0.7em;
 }
 
-img[src$=".svg"]:not(header img) {
+img[src$=".svg"] {
 	filter: var(--fgfilter);
 }
 
