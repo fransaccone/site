@@ -4,7 +4,7 @@ html {
 	--transitiontime: 0.2s cubic-bezier(0.5, 0, 0.5, 1);
 
 	--monospace: "Office Code Pro", monospace;
-	--sans-serif: "Work Sans", sans-serif;
+	--sansserif: "Work Sans", sans-serif;
 	--serif: "Libre Baskerville", serif;
 
 	--titlefont: "Poppins", var(--serif);
@@ -281,7 +281,7 @@ sup {
 body {
 	background-color: var(--bg);
 	color: var(--fg);
-	font-family: var(--sans-serif);
+	font-family: var(--sansserif);
 	font-size: 1rem;
 	line-height: 1.6;
 	margin: 0;
