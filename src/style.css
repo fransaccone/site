@@ -142,17 +142,11 @@ div#discuss {
 	width: 100%;
 }
 
-div#publication-date span {
-	color: var(--fgdim);
-	font-family: var(--titlefont);
-	font-size: calc(0.8 * var(--titlesize));
-	font-weight: var(--titleweight);
-}
-
+div#publication-date span,
 div#discuss a {
 	color: var(--fgdim);
 	font-family: var(--titlefont);
-	font-size: var(--titlesize);
+	font-size: calc(0.8 * var(--titlesize));
 	font-weight: var(--titleweight);
 	text-decoration: none;
 }
