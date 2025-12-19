@@ -7,7 +7,7 @@ const audio = new Audio("/public/francescosaccone.wav");
 title.firstChild.remove();
 
 speaker.src = "/public/speaker.svg";
-speaker.alt = "Audio";
+speaker.alt = "<Audio>";
 
 title.insertAdjacentText("afterbegin", " ");
 title.insertAdjacentElement("afterbegin", speaker);
