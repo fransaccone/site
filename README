@@ -1,8 +1,10 @@
-# Site
+Site
+====
 
 The website of Francesco Saccone, available at <https://francescosaccone.com/>.
 
-## Installation
+Installation
+------------
 
 The running of
 
@@ -19,7 +21,8 @@ The `sitetitle` parameter is the website title.
 The `discussemail` parameter is the email the *Discuss* buttons of the website
 link to.
 
-## Structure
+Structure
+---------
 
 The website structure is composed by the `.md` files in `src/root/`.
 
