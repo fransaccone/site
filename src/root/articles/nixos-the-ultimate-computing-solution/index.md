@@ -192,13 +192,9 @@ to the following reasons:
    that makes NixOS as it is today.
 
 2. Growing Interest in the Linux Desktop --- Recently, many have been
-   *distro-hopping*[^1], trying to find the perfect operating system for their
+   *distro-hopping*, trying to find the perfect operating system for their
    needs; those who have settled on NixOS may share some of the reasons
    explored in this article.
-
-[^1]: It is the frequent switching of Linux distributions in one's personal
-      computer. It is common among tech enthusiasts and those seeking their
-      subjective optimal system setup.
 
 3. Constant Expansion of [*Nixpkgs*](https://github.com/NixOS/nixpkgs) --- Over
    time, many packages have been released in Nixpkgs, the main package
