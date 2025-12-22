@@ -47,6 +47,7 @@ The `src/` directory also contains the following files:
   `.md` files for each page.
 - `icon/*.svg` — The base SVG image of a specific icon variation.
 - `robots.txt` — The _robots.txt_ file to be copied at root.
+- `script.js` — The main JavaScript file.
 - `style.css` — The main CSS file.
 - `title` — The title of the website.
 
