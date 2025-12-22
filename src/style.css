@@ -183,6 +183,7 @@ pre code {
 code {
 	background-color: var(--bgdim);
 	border-radius: var(--borderradius);
+	font-family: var(--monospace);
 	padding: 0.2em;
 }
 
