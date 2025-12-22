@@ -109,10 +109,6 @@ p img:hover {
 	filter: grayscale(0);
 }
 
-img[src$=".svg"] {
-	filter: var(--fgfilter);
-}
-
 hr {
 	border: none;
 	border-bottom: solid var(--linesize);
