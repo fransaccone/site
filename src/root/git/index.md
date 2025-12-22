@@ -1,12 +1,9 @@
 # Git
 
-The following is a list of all my [Git](https://git-scm.com/) repositories,
-along with their respective clone URLs. They are mirrored on
-[GitHub](https://github.com/frasaccone).
+All my [Git](https://git-scm.com/) repositories are listed below and mirrored
+on [GitHub](https://github.com/frasaccone).
 
-| Repository | Description         | Clone URL
-|------------|---------------------|-----------
-| `ledger`   | CSV ledger manager. | <git://@HOST@/ledger>
-| `pr`       | Package manager.    | <git://@HOST@/pr>
-| `site`     | Website.            | <git://@HOST@/site>
-| `zion`     | Operating system.   | <git://@HOST@/zion>
+- [`ledger`](git://francescosaccone.com/ledger) --- CSV ledger manager.
+- [`pr`](git://francescosaccone.com/pr) --- Package manager.
+- [`site`](git://francescosaccone.com/site) --- Website.
+- [`zion`](git://francescosaccone.com/zion) --- Operating system.
