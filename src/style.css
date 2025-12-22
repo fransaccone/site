@@ -367,22 +367,6 @@ a.glow-hover:hover img {
 	filter: var(--fgfilter);
 }
 
-a[rel="footnote"],
-a[rel="footnote"]:hover,
-a[rev="footnote"],
-a[rev="footnote"]:hover {
-	text-decoration: none;
-}
-
-div.footnotes {
-	color: var(--fgdim);
-	transition: color var(--transitiontime);
-}
-
-div.footnotes:hover {
-	color: inherit;
-}
-
 div#publication-date,
 div#discuss {
 	display: flex;
