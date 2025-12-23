@@ -6,6 +6,7 @@ html {
 	--transitiontime: 0.2s cubic-bezier(0.5, 0, 0.5, 1);
 
 	--linesize: 1px;
+	--paragraphgap: 1rem;
 
 	--monospace: "Office Code Pro", monospace;
 	--sansserif: "Work Sans", sans-serif;
@@ -103,7 +104,7 @@ a::before {
 p,
 ul,
 ol {
-	margin: 1em 0;
+	margin: var(--paragraphgap) 0;
 }
 
 ul,
