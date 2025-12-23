@@ -118,24 +118,6 @@ img {
 	width: auto;
 }
 
-p img {
-	border: solid var(--linesize);
-	border-color: var(--fgdim);
-	border-radius: var(--borderradius);
-	filter: grayscale(1);
-	height: auto;
-	margin-left: 50%;
-	padding: 1em;
-	transform: translateX(-50%);
-	transition: all var(--transitiontime);
-	width: 70%;
-}
-
-p img:hover {
-	border-color: var(--fg);
-	filter: grayscale(0);
-}
-
 hr {
 	border: none;
 	border-bottom: solid var(--linesize);
@@ -152,7 +134,8 @@ strong {
 }
 
 blockquote,
-pre {
+pre,
+p img {
 	border-left: solid var(--linesize);
 	color: var(--fgdim);
 	margin-left: 0.5em;
@@ -161,8 +144,20 @@ pre {
 }
 
 blockquote:hover,
-pre:hover {
+pre:hover,
+p:hover img {
 	color: var(--fg);
+}
+
+p img {
+	filter: grayscale(1);
+	height: auto;
+	transition: all var(--transitiontime);
+	width: calc(100% - 2 * (var(--linesize) + 0.5em + 1em));
+}
+
+p:hover img {
+	filter: grayscale(0);
 }
 
 blockquote {
