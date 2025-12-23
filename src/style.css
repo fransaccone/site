@@ -103,6 +103,7 @@ a::before {
 
 h1,
 h2,
+hr,
 p,
 blockquote,
 ol,
@@ -113,6 +114,7 @@ ul {
 
 h1:not(:first-child),
 h2:not(:first-child),
+hr:not(:first-child),
 p:not(:first-child),
 blockquote:not(:first-child),
 ol:not(:first-child),
@@ -136,7 +138,8 @@ hr {
 	border: none;
 	border-bottom: solid var(--linesize);
 	color: var(--fgdim);
-	margin: 2em 30%;
+	margin-left: 30%;
+	margin-right: 30%;
 }
 
 em {
