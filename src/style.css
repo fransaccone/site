@@ -3,7 +3,7 @@
 html {
 	font-size: 18px;
 
-	--transitiontime: 0.2s cubic-bezier(0.5, 0, 0.5, 1);
+	--transitiontime: 0.3s cubic-bezier(0.22, 0, 0.12, 1);
 
 	--indentation: 2rem;
 	--linesize: 1px;
