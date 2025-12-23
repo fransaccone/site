@@ -55,6 +55,28 @@ body {
 /* Basic styles. */
 
 h1,
+h2,
+hr,
+p,
+blockquote,
+ol,
+pre,
+ul {
+	margin: 0;
+}
+
+h1:not(:first-child),
+h2:not(:first-child),
+hr:not(:first-child),
+p:not(:first-child),
+blockquote:not(:first-child),
+ol:not(:first-child),
+pre:not(:first-child),
+ul:not(:first-child) {
+	margin-top: var(--paragraphgap);
+}
+
+h1,
 h2 {
 	font-family: var(--titlefont);
 	font-weight: var(--titleweight);
@@ -68,6 +90,20 @@ h1 {
 
 h2 {
 	font-size: 1.5em;
+}
+
+hr {
+	border: none;
+	border-bottom: solid var(--linesize);
+	color: var(--fgdim);
+	margin-left: 30%;
+	margin-right: 30%;
+}
+
+ol,
+ul {
+	margin-left: var(--indentation);
+	padding: 0;
 }
 
 a {
@@ -102,53 +138,9 @@ a::before {
 	content: "<";
 }
 
-h1,
-h2,
-hr,
-p,
-blockquote,
-ol,
-pre,
-ul {
-	margin: 0;
-}
-
-h1:not(:first-child),
-h2:not(:first-child),
-hr:not(:first-child),
-p:not(:first-child),
-blockquote:not(:first-child),
-ol:not(:first-child),
-pre:not(:first-child),
-ul:not(:first-child) {
-	margin-top: var(--paragraphgap);
-}
-
-ul,
-ol {
-	margin-left: var(--indentation);
-	padding: 0;
-}
-
 img {
 	height: 0.7em;
 	width: auto;
-}
-
-hr {
-	border: none;
-	border-bottom: solid var(--linesize);
-	color: var(--fgdim);
-	margin-left: 30%;
-	margin-right: 30%;
-}
-
-em {
-	font-style: italic;
-}
-
-strong {
-	font-weight: bold;
 }
 
 blockquote,
@@ -186,6 +178,14 @@ pre {
 	font-family: var(--monospace);
 	overflow: auto;
 	white-space: pre;
+}
+
+em {
+	font-style: italic;
+}
+
+strong {
+	font-weight: bold;
 }
 
 code {
