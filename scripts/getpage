@@ -1,6 +1,7 @@
 #!/bin/sh -eu
 
-if [ $# -lt 5 ]; then
+if [ $# -lt 5 ]
+then
 	echo "$0 sitetitle host md header footer [discussemail]" >&2
 	exit 1
 fi
@@ -15,7 +16,8 @@ discussemail="${6:-}"
 descfile="${md%.md}.desc"
 titlefile="${md%.md}.title"
 
-if [ ! -r "$descfile" ]; then
+if [ ! -r "$descfile" ]
+then
 	echo "File $descfile does not exist or is not readable." >&2
 	exit 1
 fi
@@ -23,7 +25,8 @@ fi
 rawdesc=$(cat "$descfile")
 desc=$(echo -n "$rawdesc" | tr '\n' ' ')
 
-if [ -r "$titlefile" ]; then
+if [ -r "$titlefile" ]
+then
 	rawtitle=$(cat "$titlefile")
 	title=$(echo -n "$rawtitle" | tr '/n' ' ')
 	fulltitle="$sitetitle — $title"

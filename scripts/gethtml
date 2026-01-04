@@ -1,6 +1,7 @@
 #!/bin/sh -eu
 
-if [ $# -lt 3 ]; then
+if [ $# -lt 3 ]
+then
 	echo "$0 host md [discussemail]" >&2
 	exit 1
 fi
@@ -9,7 +10,8 @@ host="$1"
 md="$2"
 discussemail="${3:-}"
 
-if [ -n "$discussemail" ]; then
+if [ -n "$discussemail" ]
+then
 	pubdatets=$(head -n 1 "$md.time")
 	pubdate=$(date -u -d @"$pubdatets" +"%Y-%m-%d")
 
@@ -22,7 +24,8 @@ fi
 
 sed "s|@HOST@|$host|g" "$md" | ${MD2HTML:-md2html} --fno-html
 
-if [ -n "$discussemail" ]; then
+if [ -n "$discussemail" ]
+then
 	echo -n '<div id="discuss">'
 	echo -n '<a class="glow-hover" href="mailto:'
 	echo -n "$discussemail?subject=[Discuss]%20"

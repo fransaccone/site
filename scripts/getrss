@@ -3,7 +3,8 @@
 # Time format specified by RSS 2.0.
 timefmt='%a, %d %b %Y %H:%M:%S +0000'
 
-if [ $# -lt 6 ]; then
+if [ $# -lt 6 ]
+then
 	echo "$0 host discussemail title desc basedir reldir [page ...]" >&2
 	exit 1
 fi
@@ -19,11 +20,13 @@ shift 6
 
 # Set pages to a newline-separated list of lines of format "modification file".
 pages=""
-for p in $@; do
+for p in $@
+do
 	pages=$(printf "$pages\n$(tail -n +2 $p.time) $p")
 done
 
-if [ -n "$pages" ]; then
+if [ -n "$pages" ]
+then
 	# Sort pages to have the most recent one on top.
 	pages=$(echo "$pages" | sort -r -n)
 
@@ -56,7 +59,8 @@ printf "<description>$desc</description>"
 printf '<language>en-us</language>'
 printf "<lastBuildDate>$lastbuild</lastBuildDate>"
 
-for p in $pages; do
+for p in $pages
+do
 	relp="${p#$basedir/}"
 
 	# Only have the path contain a trailing "/*.md" for pages which are
