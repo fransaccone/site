@@ -22,7 +22,7 @@ then
 	echo -n '</div>'
 fi
 
-sed "s|@HOST@|$host|g" "$md" | ${MD2HTML:-md2html} --fno-html
+sed "s|@HOST@|$host|g" "$md" | ${PANDOC:-pandoc} -f markdown -t html
 
 if [ -n "$discussemail" ]
 then
